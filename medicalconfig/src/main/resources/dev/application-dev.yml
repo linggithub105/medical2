@@ -1,0 +1,33 @@
+#tomcat config
+server :
+  port : 8083
+  ##项目名字配置
+  #servlet :
+  #  context-path : /demo
+  tomcat :
+    threads-max : 128
+    threads-min-spare : 5
+    uri-encoding : UTF-8
+    max-connections: 200000
+    max-http-from-post-size: 9000000
+spring :
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+  freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+  mvc:   #静态文件
+    static-path-pattern : /static/**
+  #模板引擎
+  thymeleaf:
+    model: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    #指定编码
+    encoding: utf-8
+    #禁用缓存 默认false
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
